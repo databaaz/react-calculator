@@ -57,6 +57,9 @@ class App extends Component {
         console.log(result)
         this.setState({operations: [result]});
         break;
+      case 'CE':
+        this.setState({operations: []});
+        break;
       default:
           operations_list.push(elem.value)
           this.setState({operations: operations_list});
@@ -72,8 +75,8 @@ class App extends Component {
   render() {
     return (
       <Grid container className="App" style={appStyle}>
-        <Grid container width="100%">
-        <Paper className='test' style={paperStyle} elevation={1}>
+        <Grid container width="100%" className="row">
+        <Paper rounded className='test' style={paperStyle} elevation={3}>
             <Typography variant="h5" component="h3">
               {this.state.operations}
             </Typography>
